@@ -171,10 +171,13 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[160]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">number_of_conditioned_variables</span> <span class="o">=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># define variables</span>
+
+<span class="n">number_of_conditioned_variables</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">number_of_states_in_variable</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 
 </div>
@@ -184,10 +187,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[161]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">number_of_states_in_conditioned_variable</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># </span>
+
+<span class="n">number_of_states_in_conditioned_variable</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
     <span class="n">number_of_states_in_conditioned_variable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     
@@ -203,10 +208,16 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[172]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">number_of_states_in_variable</span> <span class="o">=</span> <span class="mi">3</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># define variables</span>
+
+<span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">link_strength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">link_strength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 
 </div>
@@ -216,51 +227,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[173]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="c"># number_of_states_in_conditioned_variable[1] = 3</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">link_strength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="c"># link_strength[1] = 0.5</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">number_of_states_in_conditioned_variable</span><span class="p">),</span> <span class="n">number_of_states_in_variable</span><span class="p">)))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">P</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">number_of_states_in_conditioned_variable</span>
 </pre></div>
 
 </div>
@@ -271,13 +241,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[120]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[173]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>matrix([[ 0.,  0.,  0.],
-        [ 0.,  0.,  0.],
-        [ 0.,  0.,  0.]])</pre>
+<pre>[3, 3]</pre>
 </div>
 
 </div>
@@ -288,11 +256,17 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[174]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">number_of_conditioned_variables</span> 
-<span class="n">states</span> <span class="o">=</span> <span class="n">number_of_conditioned_variables</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># create placeholders for P(u&#39;|u)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
+    <span class="n">P</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">i</span><span class="p">]))))</span>
 </pre></div>
 
 </div>
@@ -302,53 +276,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">states</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">last_state</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">)])</span>
-<span class="k">for</span> <span class="n">conditioned_variable_no</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">state_of_conditioned_variable</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">]):</span>
-        <span class="n">states</span><span class="o">.</span><span class="n">append</span><span class="p">(())</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">last_state</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[126]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(0,)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[175]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">for</span> <span class="n">state_of_variable</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_variable</span><span class="p">):</span>
@@ -360,13 +288,13 @@ div#notebook {
             <span class="n">abs_eta_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">link_strength</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">])</span>
             <span class="n">K</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">m_i</span>
             <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
-                <span class="n">P</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">m_i</span> <span class="o">+</span> <span class="n">abs_eta_i</span> <span class="o">*</span> <span class="n">K</span>
+                <span class="n">P</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">][</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">m_i</span> <span class="o">+</span> <span class="n">abs_eta_i</span> <span class="o">*</span> <span class="n">K</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">sum_term</span> <span class="o">=</span> <span class="mi">0</span>
                 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m_i</span><span class="p">)):</span>
                     <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">r</span><span class="p">:</span>
                         <span class="n">sum_term</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-                <span class="n">P</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">abs_eta_i</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">sum_term</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">abs_eta_i</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m_i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">m_i</span><span class="o">-</span><span class="n">abs_eta_i</span><span class="o">*</span><span class="n">K</span><span class="p">)</span>
+                <span class="n">P</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">][</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">abs_eta_i</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">sum_term</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">abs_eta_i</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m_i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">m_i</span><span class="o">-</span><span class="n">abs_eta_i</span><span class="o">*</span><span class="n">K</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -376,7 +304,65 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[176]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">u_prime</span><span class="p">):</span>
+<span class="c">#     print enumerate(zip(link_strength, u_prime))</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">eta_i</span><span class="p">)</span><span class="o">*</span><span class="n">H</span><span class="p">(</span><span class="n">u_prime_i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">eta_i</span><span class="p">,</span> <span class="n">u_prime_i</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">link_strength</span><span class="p">,</span> <span class="n">u_prime</span><span class="p">))])</span>
+    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">link_strength</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">/=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">link_strength</span><span class="p">)</span>
+<span class="c">#     print(&#39;Result of F(): {}, u_prime: {}&#39;.format(res, u_prime))</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[177]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">H</span><span class="p">(</span><span class="n">u_prime_i</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">link_strength</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">u_prime_i</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">u_prime_i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[178]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="k">def</span> <span class="nf">generate_all_possible_u</span><span class="p">():</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+        <span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">groups</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[186]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">P</span>
@@ -390,15 +376,380 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[124]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[186]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>matrix([[ 0.66666667,  0.25      ,  0.125     ],
-        [ 0.16666667,  0.66666667,  0.16666667],
-        [ 0.125     ,  0.25      ,  0.66666667]])</pre>
+<pre>[matrix([[ 0.33333333,  0.33333333,  0.33333333],
+         [ 0.33333333,  0.33333333,  0.33333333],
+         [ 0.33333333,  0.33333333,  0.33333333]]),
+ matrix([[ 0.33333333,  0.33333333,  0.33333333],
+         [ 0.33333333,  0.33333333,  0.33333333],
+         [ 0.33333333,  0.33333333,  0.33333333]])]</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[195]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[210]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># P(x|u)</span>
+<span class="c"># = sum over all u&#39; such that F(u&#39;) = x</span>
+
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">import</span> <span class="nn">operator</span>
+
+<span class="k">def</span> <span class="nf">Pr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+    <span class="n">sum_term</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">u_prime</span> <span class="ow">in</span> <span class="n">generate_all_possible_u</span><span class="p">():</span>
+        <span class="c"># do the rounding here</span>
+        
+        <span class="n">F_value</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">u_prime</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;{} &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">F_value</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">F_value</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">F_value</span><span class="p">)</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">F_value</span>
+            <span class="n">F_value</span> <span class="o">=</span> <span class="n">x</span>
+            <span class="k">assert</span> <span class="n">weight</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">F_value</span><span class="p">)</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">F_value</span> <span class="o">-</span> <span class="n">x</span>
+            <span class="n">F_value</span> <span class="o">=</span> <span class="n">x</span>
+            <span class="k">assert</span> <span class="n">weight</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">continue</span>
+            
+        <span class="n">prod_term</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
+<span class="c">#             prod_term *= P[i][u_prime[i], u[i]]</span>
+            <span class="n">prod_term</span> <span class="o">*=</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">u_prime</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        
+        <span class="n">sum_term</span> <span class="o">+=</span> <span class="n">prod_term</span> <span class="o">+</span> <span class="n">correction</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">sum_term</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[211]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">correction</span><span class="p">(</span><span class="n">weight2</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">link_strength</span><span class="p">))</span> <span class="o">*</span> <span class="n">weight2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">link_strength</span><span class="p">)))</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">*</span> <span class="n">weight2</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">link_strength</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">min_max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">min_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">link_strength</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">link_strength</span><span class="p">))</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">min_max</span><span class="o">*</span><span class="n">c1</span> <span class="o">+</span> <span class="n">weight2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">min_max</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[212]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">for</span> <span class="n">us</span> <span class="ow">in</span> <span class="n">generate_all_possible_u</span><span class="p">():</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">Pr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">us</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_variable</span><span class="p">)]</span>
+    <span class="n">suml</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">suml</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="n">suml</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+[1.0, 0.0, 0.0]
+</pre>
+</div>
 </div>
 
 </div>
