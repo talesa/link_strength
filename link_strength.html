@@ -171,12 +171,12 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[329]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># define variables</span>
 
-<span class="n">number_of_conditioned_variables</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">number_of_conditioned_variables</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">number_of_states_in_variable</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 
@@ -187,10 +187,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[330]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># </span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># magic</span>
 
 <span class="n">number_of_states_in_conditioned_variable</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
@@ -208,16 +208,22 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[331]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># define variables</span>
 
 <span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="n">link_strength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">link_strength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">link_strength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.99</span>
+<span class="n">link_strength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">link_strength</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">link_strength</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">link_strength</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
 </pre></div>
 
 </div>
@@ -227,36 +233,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">number_of_states_in_conditioned_variable</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[116]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[3, 3]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[332]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># create placeholders for P(u&#39;|u)</span>
@@ -276,14 +253,15 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[333]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">for</span> <span class="n">state_of_variable</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_variable</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">conditioned_variable_no</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">state_of_conditioned_variable</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">]):</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">state_of_variable</span>
-            <span class="n">c</span> <span class="o">=</span> <span class="n">state_of_conditioned_variable</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># for state_of_variable in range(number_of_states_in_variable):</span>
+<span class="k">for</span> <span class="n">conditioned_variable_no</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_conditioned_variables</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">]):</span>
+<span class="c">#             r = state_of_variable</span>
+<span class="c">#             c = state_of_conditioned_variable</span>
             <span class="n">m_i</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number_of_states_in_conditioned_variable</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">])</span>
             <span class="n">abs_eta_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">link_strength</span><span class="p">[</span><span class="n">conditioned_variable_no</span><span class="p">])</span>
             <span class="n">K</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">m_i</span>
@@ -304,7 +282,50 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[334]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">P</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[334]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[matrix([[ 0.99333333,  0.00663333,  0.00168333],
+         [ 0.00333333,  0.99333333,  0.00333333],
+         [ 0.00168333,  0.00663333,  0.99333333]]),
+ matrix([[ 0.73333333,  0.21333333,  0.09333333],
+         [ 0.13333333,  0.73333333,  0.13333333],
+         [ 0.09333333,  0.21333333,  0.73333333]]),
+ matrix([[ 0.73333333,  0.21333333,  0.09333333],
+         [ 0.13333333,  0.73333333,  0.13333333],
+         [ 0.09333333,  0.21333333,  0.73333333]]),
+ matrix([[ 0.73333333,  0.21333333,  0.09333333],
+         [ 0.13333333,  0.73333333,  0.13333333],
+         [ 0.09333333,  0.21333333,  0.73333333]]),
+ matrix([[ 0.73333333,  0.21333333,  0.09333333],
+         [ 0.13333333,  0.73333333,  0.13333333],
+         [ 0.09333333,  0.21333333,  0.73333333]])]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[335]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">u_prime</span><span class="p">):</span>
@@ -321,7 +342,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[336]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">H</span><span class="p">(</span><span class="n">u_prime_i</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
@@ -338,7 +359,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[337]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">itertools</span>
@@ -360,41 +381,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">P</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[122]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[matrix([[ 0.66666667,  0.25      ,  0.125     ],
-         [ 0.16666667,  0.66666667,  0.16666667],
-         [ 0.125     ,  0.25      ,  0.66666667]]),
- matrix([[ 0.66666667,  0.25      ,  0.125     ],
-         [ 0.16666667,  0.66666667,  0.16666667],
-         [ 0.125     ,  0.25      ,  0.66666667]])]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[338]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
@@ -407,7 +394,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[157]:</div>
+<div class="prompt input_prompt">In&nbsp;[339]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># P(x|u)</span>
@@ -442,7 +429,7 @@ div#notebook {
             <span class="n">prod_term</span> <span class="o">*=</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">u_prime</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 
     
-        <span class="k">print</span> <span class="p">(</span><span class="n">correction</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="c">#         print (correction(weight, x))</span>
         
         <span class="n">sum_term</span> <span class="o">+=</span> <span class="n">prod_term</span> <span class="c">#+ correction(weight, x)</span>
         
@@ -456,7 +443,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[158]:</div>
+<div class="prompt input_prompt">In&nbsp;[340]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">correction</span><span class="p">(</span><span class="n">weight2</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
@@ -476,15 +463,16 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[159]:</div>
+<div class="prompt input_prompt">In&nbsp;[341]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">for</span> <span class="n">us</span> <span class="ow">in</span> <span class="n">generate_all_possible_u</span><span class="p">():</span>
     <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">Pr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">us</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_states_in_variable</span><span class="p">)]</span>
     <span class="n">suml</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="c">#     if suml != 0:</span>
-<span class="c">#         l = [i/suml for i in l]</span>
-    <span class="k">print</span> <span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">suml</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="n">suml</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;</span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">&#39;{}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">us</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -497,162 +485,253 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.7777777777777779, 0.62500000000000011, 0.078125]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.59722222222222232, 0.90972222222222243, 0.14583333333333334]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.28125, 0.9184027777777779, 0.28125]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.59722222222222232, 0.90972222222222232, 0.14583333333333334]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.25000000000000006, 0.94444444444444475, 0.25000000000000006]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.14583333333333334, 0.90972222222222232, 0.59722222222222232]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.28125, 0.9184027777777779, 0.28125]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.14583333333333337, 0.90972222222222243, 0.59722222222222232]
-1.25
-0.625
-0.625
-0.4
-0.8
-0.4
-0.8
-0.4
-0.8
-0.4
-0.625
-0.625
-1.25
-[0.078125, 0.625, 0.7777777777777779]
+<pre>(0, 0, 0, 0, 0): [&apos;0.57&apos;, &apos;0.43&apos;, &apos;0.00&apos;]
+(0, 0, 0, 0, 1): [&apos;0.51&apos;, &apos;0.49&apos;, &apos;0.00&apos;]
+(0, 0, 0, 0, 2): [&apos;0.49&apos;, &apos;0.49&apos;, &apos;0.01&apos;]
+(0, 0, 0, 1, 0): [&apos;0.51&apos;, &apos;0.49&apos;, &apos;0.00&apos;]
+(0, 0, 0, 1, 1): [&apos;0.49&apos;, &apos;0.50&apos;, &apos;0.01&apos;]
+(0, 0, 0, 1, 2): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 0, 0, 2, 0): [&apos;0.49&apos;, &apos;0.49&apos;, &apos;0.01&apos;]
+(0, 0, 0, 2, 1): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 0, 0, 2, 2): [&apos;0.44&apos;, &apos;0.50&apos;, &apos;0.06&apos;]
+(0, 0, 1, 0, 0): [&apos;0.51&apos;, &apos;0.49&apos;, &apos;0.00&apos;]
+(0, 0, 1, 0, 1): [&apos;0.49&apos;, &apos;0.50&apos;, &apos;0.01&apos;]
+(0, 0, 1, 0, 2): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 0, 1, 1, 0): [&apos;0.49&apos;, &apos;0.50&apos;, &apos;0.01&apos;]
+(0, 0, 1, 1, 1): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 0, 1, 1, 2): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 0, 1, 2, 0): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 0, 1, 2, 1): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 0, 1, 2, 2): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 0, 2, 0, 0): [&apos;0.49&apos;, &apos;0.49&apos;, &apos;0.01&apos;]
+(0, 0, 2, 0, 1): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 0, 2, 0, 2): [&apos;0.44&apos;, &apos;0.50&apos;, &apos;0.06&apos;]
+(0, 0, 2, 1, 0): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 0, 2, 1, 1): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 0, 2, 1, 2): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 0, 2, 2, 0): [&apos;0.44&apos;, &apos;0.50&apos;, &apos;0.06&apos;]
+(0, 0, 2, 2, 1): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 0, 2, 2, 2): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 1, 0, 0, 0): [&apos;0.51&apos;, &apos;0.49&apos;, &apos;0.00&apos;]
+(0, 1, 0, 0, 1): [&apos;0.49&apos;, &apos;0.50&apos;, &apos;0.01&apos;]
+(0, 1, 0, 0, 2): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 1, 0, 1, 0): [&apos;0.49&apos;, &apos;0.50&apos;, &apos;0.01&apos;]
+(0, 1, 0, 1, 1): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 1, 0, 1, 2): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 1, 0, 2, 0): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 1, 0, 2, 1): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 1, 0, 2, 2): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 1, 1, 0, 0): [&apos;0.49&apos;, &apos;0.50&apos;, &apos;0.01&apos;]
+(0, 1, 1, 0, 1): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 1, 1, 0, 2): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 1, 1, 1, 0): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 1, 1, 1, 1): [&apos;0.46&apos;, &apos;0.50&apos;, &apos;0.03&apos;]
+(0, 1, 1, 1, 2): [&apos;0.40&apos;, &apos;0.50&apos;, &apos;0.10&apos;]
+(0, 1, 1, 2, 0): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 1, 1, 2, 1): [&apos;0.40&apos;, &apos;0.50&apos;, &apos;0.10&apos;]
+(0, 1, 1, 2, 2): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 1, 2, 0, 0): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 1, 2, 0, 1): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 1, 2, 0, 2): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 1, 2, 1, 0): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 1, 2, 1, 1): [&apos;0.40&apos;, &apos;0.50&apos;, &apos;0.10&apos;]
+(0, 1, 2, 1, 2): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 1, 2, 2, 0): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 1, 2, 2, 1): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 1, 2, 2, 2): [&apos;0.18&apos;, &apos;0.50&apos;, &apos;0.32&apos;]
+(0, 2, 0, 0, 0): [&apos;0.49&apos;, &apos;0.49&apos;, &apos;0.01&apos;]
+(0, 2, 0, 0, 1): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 2, 0, 0, 2): [&apos;0.44&apos;, &apos;0.50&apos;, &apos;0.06&apos;]
+(0, 2, 0, 1, 0): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 2, 0, 1, 1): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 2, 0, 1, 2): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 2, 0, 2, 0): [&apos;0.44&apos;, &apos;0.50&apos;, &apos;0.06&apos;]
+(0, 2, 0, 2, 1): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 2, 0, 2, 2): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 2, 1, 0, 0): [&apos;0.48&apos;, &apos;0.50&apos;, &apos;0.02&apos;]
+(0, 2, 1, 0, 1): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 2, 1, 0, 2): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 2, 1, 1, 0): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(0, 2, 1, 1, 1): [&apos;0.40&apos;, &apos;0.50&apos;, &apos;0.10&apos;]
+(0, 2, 1, 1, 2): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 2, 1, 2, 0): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 2, 1, 2, 1): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 2, 1, 2, 2): [&apos;0.18&apos;, &apos;0.50&apos;, &apos;0.32&apos;]
+(0, 2, 2, 0, 0): [&apos;0.44&apos;, &apos;0.50&apos;, &apos;0.06&apos;]
+(0, 2, 2, 0, 1): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 2, 2, 0, 2): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 2, 2, 1, 0): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(0, 2, 2, 1, 1): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 2, 2, 1, 2): [&apos;0.18&apos;, &apos;0.50&apos;, &apos;0.32&apos;]
+(0, 2, 2, 2, 0): [&apos;0.27&apos;, &apos;0.50&apos;, &apos;0.23&apos;]
+(0, 2, 2, 2, 1): [&apos;0.18&apos;, &apos;0.50&apos;, &apos;0.32&apos;]
+(0, 2, 2, 2, 2): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(1, 0, 0, 0, 0): [&apos;0.48&apos;, &apos;0.51&apos;, &apos;0.01&apos;]
+(1, 0, 0, 0, 1): [&apos;0.46&apos;, &apos;0.52&apos;, &apos;0.02&apos;]
+(1, 0, 0, 0, 2): [&apos;0.45&apos;, &apos;0.50&apos;, &apos;0.05&apos;]
+(1, 0, 0, 1, 0): [&apos;0.46&apos;, &apos;0.51&apos;, &apos;0.02&apos;]
+(1, 0, 0, 1, 1): [&apos;0.42&apos;, &apos;0.53&apos;, &apos;0.04&apos;]
+(1, 0, 0, 1, 2): [&apos;0.40&apos;, &apos;0.51&apos;, &apos;0.09&apos;]
+(1, 0, 0, 2, 0): [&apos;0.44&apos;, &apos;0.51&apos;, &apos;0.05&apos;]
+(1, 0, 0, 2, 1): [&apos;0.35&apos;, &apos;0.55&apos;, &apos;0.10&apos;]
+(1, 0, 0, 2, 2): [&apos;0.32&apos;, &apos;0.51&apos;, &apos;0.16&apos;]
+(1, 0, 1, 0, 0): [&apos;0.47&apos;, &apos;0.51&apos;, &apos;0.02&apos;]
+(1, 0, 1, 0, 1): [&apos;0.42&apos;, &apos;0.53&apos;, &apos;0.04&apos;]
+(1, 0, 1, 0, 2): [&apos;0.40&apos;, &apos;0.51&apos;, &apos;0.09&apos;]
+(1, 0, 1, 1, 0): [&apos;0.43&apos;, &apos;0.53&apos;, &apos;0.04&apos;]
+(1, 0, 1, 1, 1): [&apos;0.36&apos;, &apos;0.56&apos;, &apos;0.08&apos;]
+(1, 0, 1, 1, 2): [&apos;0.32&apos;, &apos;0.52&apos;, &apos;0.16&apos;]
+(1, 0, 1, 2, 0): [&apos;0.38&apos;, &apos;0.53&apos;, &apos;0.09&apos;]
+(1, 0, 1, 2, 1): [&apos;0.22&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 0, 1, 2, 2): [&apos;0.18&apos;, &apos;0.52&apos;, &apos;0.30&apos;]
+(1, 0, 2, 0, 0): [&apos;0.43&apos;, &apos;0.52&apos;, &apos;0.05&apos;]
+(1, 0, 2, 0, 1): [&apos;0.35&apos;, &apos;0.55&apos;, &apos;0.10&apos;]
+(1, 0, 2, 0, 2): [&apos;0.32&apos;, &apos;0.51&apos;, &apos;0.16&apos;]
+(1, 0, 2, 1, 0): [&apos;0.36&apos;, &apos;0.55&apos;, &apos;0.10&apos;]
+(1, 0, 2, 1, 1): [&apos;0.21&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 0, 2, 1, 2): [&apos;0.17&apos;, &apos;0.53&apos;, &apos;0.30&apos;]
+(1, 0, 2, 2, 0): [&apos;0.31&apos;, &apos;0.52&apos;, &apos;0.17&apos;]
+(1, 0, 2, 2, 1): [&apos;0.14&apos;, &apos;0.55&apos;, &apos;0.32&apos;]
+(1, 0, 2, 2, 2): [&apos;0.11&apos;, &apos;0.51&apos;, &apos;0.37&apos;]
+(1, 1, 0, 0, 0): [&apos;0.47&apos;, &apos;0.51&apos;, &apos;0.02&apos;]
+(1, 1, 0, 0, 1): [&apos;0.42&apos;, &apos;0.53&apos;, &apos;0.04&apos;]
+(1, 1, 0, 0, 2): [&apos;0.40&apos;, &apos;0.51&apos;, &apos;0.09&apos;]
+(1, 1, 0, 1, 0): [&apos;0.43&apos;, &apos;0.53&apos;, &apos;0.04&apos;]
+(1, 1, 0, 1, 1): [&apos;0.36&apos;, &apos;0.56&apos;, &apos;0.08&apos;]
+(1, 1, 0, 1, 2): [&apos;0.32&apos;, &apos;0.52&apos;, &apos;0.16&apos;]
+(1, 1, 0, 2, 0): [&apos;0.38&apos;, &apos;0.53&apos;, &apos;0.09&apos;]
+(1, 1, 0, 2, 1): [&apos;0.22&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 1, 0, 2, 2): [&apos;0.18&apos;, &apos;0.52&apos;, &apos;0.30&apos;]
+(1, 1, 1, 0, 0): [&apos;0.44&apos;, &apos;0.52&apos;, &apos;0.04&apos;]
+(1, 1, 1, 0, 1): [&apos;0.36&apos;, &apos;0.56&apos;, &apos;0.08&apos;]
+(1, 1, 1, 0, 2): [&apos;0.32&apos;, &apos;0.52&apos;, &apos;0.16&apos;]
+(1, 1, 1, 1, 0): [&apos;0.36&apos;, &apos;0.55&apos;, &apos;0.08&apos;]
+(1, 1, 1, 1, 1): [&apos;0.21&apos;, &apos;0.61&apos;, &apos;0.18&apos;]
+(1, 1, 1, 1, 2): [&apos;0.17&apos;, &apos;0.53&apos;, &apos;0.31&apos;]
+(1, 1, 1, 2, 0): [&apos;0.32&apos;, &apos;0.52&apos;, &apos;0.16&apos;]
+(1, 1, 1, 2, 1): [&apos;0.12&apos;, &apos;0.56&apos;, &apos;0.32&apos;]
+(1, 1, 1, 2, 2): [&apos;0.10&apos;, &apos;0.52&apos;, &apos;0.39&apos;]
+(1, 1, 2, 0, 0): [&apos;0.36&apos;, &apos;0.55&apos;, &apos;0.10&apos;]
+(1, 1, 2, 0, 1): [&apos;0.21&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 1, 2, 0, 2): [&apos;0.17&apos;, &apos;0.53&apos;, &apos;0.30&apos;]
+(1, 1, 2, 1, 0): [&apos;0.21&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 1, 2, 1, 1): [&apos;0.10&apos;, &apos;0.57&apos;, &apos;0.33&apos;]
+(1, 1, 2, 1, 2): [&apos;0.08&apos;, &apos;0.52&apos;, &apos;0.39&apos;]
+(1, 1, 2, 2, 0): [&apos;0.17&apos;, &apos;0.53&apos;, &apos;0.30&apos;]
+(1, 1, 2, 2, 1): [&apos;0.06&apos;, &apos;0.54&apos;, &apos;0.40&apos;]
+(1, 1, 2, 2, 2): [&apos;0.05&apos;, &apos;0.51&apos;, &apos;0.44&apos;]
+(1, 2, 0, 0, 0): [&apos;0.43&apos;, &apos;0.52&apos;, &apos;0.05&apos;]
+(1, 2, 0, 0, 1): [&apos;0.35&apos;, &apos;0.55&apos;, &apos;0.10&apos;]
+(1, 2, 0, 0, 2): [&apos;0.32&apos;, &apos;0.51&apos;, &apos;0.16&apos;]
+(1, 2, 0, 1, 0): [&apos;0.36&apos;, &apos;0.55&apos;, &apos;0.10&apos;]
+(1, 2, 0, 1, 1): [&apos;0.21&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 2, 0, 1, 2): [&apos;0.17&apos;, &apos;0.53&apos;, &apos;0.30&apos;]
+(1, 2, 0, 2, 0): [&apos;0.31&apos;, &apos;0.52&apos;, &apos;0.17&apos;]
+(1, 2, 0, 2, 1): [&apos;0.14&apos;, &apos;0.55&apos;, &apos;0.32&apos;]
+(1, 2, 0, 2, 2): [&apos;0.11&apos;, &apos;0.51&apos;, &apos;0.37&apos;]
+(1, 2, 1, 0, 0): [&apos;0.36&apos;, &apos;0.55&apos;, &apos;0.10&apos;]
+(1, 2, 1, 0, 1): [&apos;0.21&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 2, 1, 0, 2): [&apos;0.17&apos;, &apos;0.53&apos;, &apos;0.30&apos;]
+(1, 2, 1, 1, 0): [&apos;0.21&apos;, &apos;0.60&apos;, &apos;0.19&apos;]
+(1, 2, 1, 1, 1): [&apos;0.10&apos;, &apos;0.57&apos;, &apos;0.33&apos;]
+(1, 2, 1, 1, 2): [&apos;0.08&apos;, &apos;0.52&apos;, &apos;0.39&apos;]
+(1, 2, 1, 2, 0): [&apos;0.17&apos;, &apos;0.53&apos;, &apos;0.30&apos;]
+(1, 2, 1, 2, 1): [&apos;0.06&apos;, &apos;0.54&apos;, &apos;0.40&apos;]
+(1, 2, 1, 2, 2): [&apos;0.05&apos;, &apos;0.51&apos;, &apos;0.44&apos;]
+(1, 2, 2, 0, 0): [&apos;0.31&apos;, &apos;0.52&apos;, &apos;0.17&apos;]
+(1, 2, 2, 0, 1): [&apos;0.13&apos;, &apos;0.55&apos;, &apos;0.32&apos;]
+(1, 2, 2, 0, 2): [&apos;0.11&apos;, &apos;0.51&apos;, &apos;0.38&apos;]
+(1, 2, 2, 1, 0): [&apos;0.13&apos;, &apos;0.55&apos;, &apos;0.32&apos;]
+(1, 2, 2, 1, 1): [&apos;0.05&apos;, &apos;0.54&apos;, &apos;0.41&apos;]
+(1, 2, 2, 1, 2): [&apos;0.04&apos;, &apos;0.51&apos;, &apos;0.44&apos;]
+(1, 2, 2, 2, 0): [&apos;0.11&apos;, &apos;0.52&apos;, &apos;0.38&apos;]
+(1, 2, 2, 2, 1): [&apos;0.04&apos;, &apos;0.52&apos;, &apos;0.45&apos;]
+(1, 2, 2, 2, 2): [&apos;0.03&apos;, &apos;0.51&apos;, &apos;0.47&apos;]
+(2, 0, 0, 0, 0): [&apos;0.39&apos;, &apos;0.50&apos;, &apos;0.11&apos;]
+(2, 0, 0, 0, 1): [&apos;0.32&apos;, &apos;0.50&apos;, &apos;0.18&apos;]
+(2, 0, 0, 0, 2): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 0, 0, 1, 0): [&apos;0.32&apos;, &apos;0.50&apos;, &apos;0.18&apos;]
+(2, 0, 0, 1, 1): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 0, 0, 1, 2): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 0, 0, 2, 0): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 0, 0, 2, 1): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 0, 0, 2, 2): [&apos;0.06&apos;, &apos;0.50&apos;, &apos;0.44&apos;]
+(2, 0, 1, 0, 0): [&apos;0.32&apos;, &apos;0.50&apos;, &apos;0.18&apos;]
+(2, 0, 1, 0, 1): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 0, 1, 0, 2): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 0, 1, 1, 0): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 0, 1, 1, 1): [&apos;0.10&apos;, &apos;0.50&apos;, &apos;0.40&apos;]
+(2, 0, 1, 1, 2): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 0, 1, 2, 0): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 0, 1, 2, 1): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 0, 1, 2, 2): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 0, 2, 0, 0): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 0, 2, 0, 1): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 0, 2, 0, 2): [&apos;0.06&apos;, &apos;0.50&apos;, &apos;0.44&apos;]
+(2, 0, 2, 1, 0): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 0, 2, 1, 1): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 0, 2, 1, 2): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 0, 2, 2, 0): [&apos;0.06&apos;, &apos;0.50&apos;, &apos;0.44&apos;]
+(2, 0, 2, 2, 1): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 0, 2, 2, 2): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.49&apos;]
+(2, 1, 0, 0, 0): [&apos;0.32&apos;, &apos;0.50&apos;, &apos;0.18&apos;]
+(2, 1, 0, 0, 1): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 1, 0, 0, 2): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 1, 0, 1, 0): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 1, 0, 1, 1): [&apos;0.10&apos;, &apos;0.50&apos;, &apos;0.40&apos;]
+(2, 1, 0, 1, 2): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 1, 0, 2, 0): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 1, 0, 2, 1): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 1, 0, 2, 2): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 1, 1, 0, 0): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 1, 1, 0, 1): [&apos;0.10&apos;, &apos;0.50&apos;, &apos;0.40&apos;]
+(2, 1, 1, 0, 2): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 1, 1, 1, 0): [&apos;0.10&apos;, &apos;0.50&apos;, &apos;0.40&apos;]
+(2, 1, 1, 1, 1): [&apos;0.03&apos;, &apos;0.50&apos;, &apos;0.46&apos;]
+(2, 1, 1, 1, 2): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 1, 1, 2, 0): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 1, 1, 2, 1): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 1, 1, 2, 2): [&apos;0.01&apos;, &apos;0.50&apos;, &apos;0.49&apos;]
+(2, 1, 2, 0, 0): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 1, 2, 0, 1): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 1, 2, 0, 2): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 1, 2, 1, 0): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 1, 2, 1, 1): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 1, 2, 1, 2): [&apos;0.01&apos;, &apos;0.50&apos;, &apos;0.49&apos;]
+(2, 1, 2, 2, 0): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 1, 2, 2, 1): [&apos;0.01&apos;, &apos;0.50&apos;, &apos;0.49&apos;]
+(2, 1, 2, 2, 2): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.51&apos;]
+(2, 2, 0, 0, 0): [&apos;0.23&apos;, &apos;0.50&apos;, &apos;0.27&apos;]
+(2, 2, 0, 0, 1): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 2, 0, 0, 2): [&apos;0.06&apos;, &apos;0.50&apos;, &apos;0.44&apos;]
+(2, 2, 0, 1, 0): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 2, 0, 1, 1): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 2, 0, 1, 2): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 2, 0, 2, 0): [&apos;0.06&apos;, &apos;0.50&apos;, &apos;0.44&apos;]
+(2, 2, 0, 2, 1): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 2, 0, 2, 2): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.49&apos;]
+(2, 2, 1, 0, 0): [&apos;0.11&apos;, &apos;0.50&apos;, &apos;0.39&apos;]
+(2, 2, 1, 0, 1): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 2, 1, 0, 2): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 2, 1, 1, 0): [&apos;0.05&apos;, &apos;0.50&apos;, &apos;0.45&apos;]
+(2, 2, 1, 1, 1): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 2, 1, 1, 2): [&apos;0.01&apos;, &apos;0.50&apos;, &apos;0.49&apos;]
+(2, 2, 1, 2, 0): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 2, 1, 2, 1): [&apos;0.01&apos;, &apos;0.50&apos;, &apos;0.49&apos;]
+(2, 2, 1, 2, 2): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.51&apos;]
+(2, 2, 2, 0, 0): [&apos;0.06&apos;, &apos;0.50&apos;, &apos;0.44&apos;]
+(2, 2, 2, 0, 1): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 2, 2, 0, 2): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.49&apos;]
+(2, 2, 2, 1, 0): [&apos;0.02&apos;, &apos;0.50&apos;, &apos;0.48&apos;]
+(2, 2, 2, 1, 1): [&apos;0.01&apos;, &apos;0.50&apos;, &apos;0.49&apos;]
+(2, 2, 2, 1, 2): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.51&apos;]
+(2, 2, 2, 2, 0): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.49&apos;]
+(2, 2, 2, 2, 1): [&apos;0.01&apos;, &apos;0.49&apos;, &apos;0.51&apos;]
+(2, 2, 2, 2, 2): [&apos;0.00&apos;, &apos;0.43&apos;, &apos;0.57&apos;]
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
-</pre></div>
-
-</div>
 </div>
 </div>
 
